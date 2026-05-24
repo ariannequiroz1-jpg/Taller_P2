@@ -14,6 +14,14 @@ void ingresarNotas(float notas[][MATERIAS], int n)
                 printf("Nota %d: ", j + 1);
                 scanf("%f", &notas[i][j]);
 
+                if(notas[i][j] < 0 || notas[i][j] > 10)
+                {
+                    printf("\n❌ ERROR: Nota invalida.\n");
+                    printf("👉 Debe estar entre 0 y 10.\n");
+                    printf("👉 Intenta nuevamente (Estudiante %d, Materia %d)\n\n",
+                           i + 1, j + 1);
+                }
+
             } while(notas[i][j] < 0 || notas[i][j] > 10);
         }
     }
@@ -59,7 +67,7 @@ void estadisticasEstudiantes(float notas[][MATERIAS], int n)
         }
 
         printf("Estudiante %d -> Promedio: %.2f | Mayor: %.1f | Menor: %.1f\n",
-               i + 1, suma/MATERIAS, mayor, menor);
+               i + 1, suma / MATERIAS, mayor, menor);
     }
 }
 
@@ -95,6 +103,6 @@ void estadisticasMaterias(float notas[][MATERIAS], int n)
         }
 
         printf("Materia %d -> Promedio: %.2f | Mayor: %.1f | Menor: %.1f | Aprobados: %d | Reprobados: %d\n",
-               j + 1, suma/n, mayor, menor, aprobados, reprobados);
+               j + 1, suma / n, mayor, menor, aprobados, reprobados);
     }
 }
