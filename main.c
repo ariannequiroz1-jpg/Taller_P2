@@ -7,31 +7,20 @@ int main()
 
     do
     {
-        printf("Ingrese numero de estudiantes (1-100): ");
+        printf("Numero de estudiantes: ");
         scanf("%d", &n);
 
-        if(n <= 0 || n > 100)
-        {
-            printf("ERROR -> Numero invalido\n");
-        }
-
-    }while(n <= 0 || n > 100);
+    } while(n <= 0 || n > 100);
 
     float notas[100][MATERIAS];
 
-    ingresar(notas, n);
+    ingresarNotas(notas, n);
 
-    mostrar(notas, n);
+    mostrarNotas(notas, n);
 
-    promedioEstudiantes(notas, n);
+    estadisticasEstudiantes(notas, n);
 
-    promedioMaterias(notas, n);
-
-    extremosEstudiantes(notas, n);
-
-    extremosMaterias(notas, n);
-
-    aprobadosReprobados(notas, n);
+    estadisticasMaterias(notas, n);
 
     return 0;
 }
