@@ -1,6 +1,18 @@
 #include <stdio.h>
 #include "funciones.h"
 
+void corregirNota(float *nota)
+{
+    printf("Ingrese nueva nota (0-10): ");
+    scanf("%f", nota);
+
+    while(*nota < 0 || *nota > 10)
+    {
+        printf("ERROR: nota invalida. Intente nuevamente: ");
+        scanf("%f", nota);
+    }
+}
+
 void ingresarNotas(float notas[][MATERIAS], int n)
 {
     for(int i = 0; i < n; i++)
@@ -18,6 +30,9 @@ void ingresarNotas(float notas[][MATERIAS], int n)
                 {
                     printf("\nERROR: Nota invalida.\n");
                     printf(" Debe estar entre 0 y 10.\n");
+
+                    //uso punteros
+                    corregirNota(&notas[i][j]);
                 }
 
             } while(notas[i][j] < 0 || notas[i][j] > 10);

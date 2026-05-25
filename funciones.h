@@ -7,5 +7,6 @@ void ingresarNotas(float notas[][MATERIAS], int n);
 void mostrarNotas(float notas[][MATERIAS], int n);
 void estadisticasEstudiantes(float notas[][MATERIAS], int n);
 void estadisticasMaterias(float notas[][MATERIAS], int n);
+void corregirNota(float *nota);
 
 #endif
