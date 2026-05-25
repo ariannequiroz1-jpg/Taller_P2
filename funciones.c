@@ -17,7 +17,7 @@ void ingresarNotas(float notas[][MATERIAS], int n)
                 if(notas[i][j] < 0 || notas[i][j] > 10)
                 {
                     printf("\nERROR: Nota invalida.\n");
-                    printf("👉 Debe estar entre 0 y 10.\n");
+                    printf(" Debe estar entre 0 y 10.\n");
                 }
 
             } while(notas[i][j] < 0 || notas[i][j] > 10);
